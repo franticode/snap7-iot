@@ -12,9 +12,8 @@ Platform               :=$(TargetCPU)-$(OS)
 ConfigurationName      :=Release
 IntermediateDirectory  :=../temp/$(TargetCPU)
 OutDir                 := $(IntermediateDirectory)
-ToolPath               :=path/to
-LinkerName             :=$(ToolPath)/toolchain-mips_34kc_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mips-*-linux-g++
-SharedObjectLinkerName :=$(ToolPath)/toolchain-mips_34kc_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mips-*-linux-g++ -shared -fPIC
+LinkerName             :=mips-linux-gnu-g++
+SharedObjectLinkerName :=mips-linux-gnu-g++ -shared -fPIC
 DebugSwitch            :=-gstab
 IncludeSwitch          :=-I
 LibrarySwitch          :=-l
@@ -35,9 +34,9 @@ LibInstall             := /usr/lib
 ##
 ## Common variables (CXXFLAGS varies across platforms)
 ##
-AR       := $(ToolPath)/toolchain-mips_34kc_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mips-*-linux-ar
-CXX      := $(ToolPath)/toolchain-mips_34kc_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mips-*-linux-g++
-CC 		 := $(ToolPath)/toolchain-mips_34kc_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mips-*-linux-gcc
+AR       := mips-linux-gnu-ar
+CXX      := mips-linux-gnu-g++
+CC 		 := mips-linux-gnu-gcc
 CFLAGS   := -fPIC
 
 ##
